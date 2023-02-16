@@ -11,3 +11,4 @@ if __name__ == "__main__":
     while(True):
         time.sleep(5)
         change_my_array()
+        print(my_array)

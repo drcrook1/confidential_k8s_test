@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "trying it the dumb way."
+cat /proc/$1/maps
+
+echo "Trying it the internets way..."
+
 grep rw-p /proc/$1/maps \
 | sed -n 's/^\([0-9a-f]*\)-\([0-9a-f]*\) .*$/\1 \2/p' \
 | while read start stop; do \
