@@ -1,0 +1,14 @@
+FROM ubuntu:20.04
+
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install python3-pip -y
+RUN apt-get install gdb -y
+
+COPY ./ /app/
+
+RUN pip3 install -r /app/requirements.txt
+RUN chmod +x /app/dump_memory.sh
+
+ENV PYTHONBUFFERED=0
+CMD ["python3", "-u", "/app/run.py"]
