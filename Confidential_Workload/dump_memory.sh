@@ -1,7 +1,12 @@
 #!/bin/bash
 
-echo "trying it the dumb way."
-cat /proc/$1/maps
+echo "dump useful information"
+ps -ax
+echo "gdp -pid [PID OF PYTHON]" 
+
+# gcore [PROC ID]
+# strings core.1 | grep -B 3 -A 3 fake
+
 
 echo "Trying it the internets way..."
 
